@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="gallery">
+    <div class="gallery__main">
+      <button class="gallery__arrow gallery__arrow--prev" aria-label="Previous image">
+        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+      </button>
+      <img
+        class="gallery__image"
+        src="assets/products/image-product-1.jpg"
+        alt="Product image 1 of 4"
+        role="button"
+        tabindex="0"
+      >
+      <button class="gallery__arrow gallery__arrow--next" aria-label="Next image">
+        <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+      </button>
+    </div>
+
+    <div class="gallery__live-region visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <div class="gallery__thumbnails">
+      <button class="gallery__thumb gallery__thumb--active" aria-label="View image 1" aria-current="true">
+        <img src="assets/thumbnails/image-product-1-thumbnail.jpg" alt="" aria-hidden="true">
+      </button>
+      <button class="gallery__thumb" aria-label="View image 2">
+        <img src="assets/thumbnails/image-product-2-thumbnail.jpg" alt="" aria-hidden="true">
+      </button>
+      <button class="gallery__thumb" aria-label="View image 3">
+        <img src="assets/thumbnails/image-product-3-thumbnail.jpg" alt="" aria-hidden="true">
+      </button>
+      <button class="gallery__thumb" aria-label="View image 4">
+        <img src="assets/thumbnails/image-product-4-thumbnail.jpg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </main>
+  <footer class="footer" aria-label="Site footer">
+    <p>Assignment by Dmitri Andronik</p>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+    <div class="lightbox__overlay"></div>
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Close lightbox">
+        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="currentColor" fill-rule="evenodd"/></svg>
+      </button>
+      <div class="lightbox__main">
+        <button class="lightbox__arrow lightbox__arrow--prev" aria-label="Previous image">
+          <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+        </button>
+        <img class="lightbox__image" src="assets/products/image-product-1.jpg" alt="Product image 1 of 4">
+        <button class="lightbox__arrow lightbox__arrow--next" aria-label="Next image">
+          <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="3" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="lightbox__live-region visually-hidden" aria-live="polite" aria-atomic="true"></div>
+      <div class="lightbox__thumbnails">
+        <button class="lightbox__thumb lightbox__thumb--active" aria-label="View image 1" aria-current="true">
+          <img src="assets/thumbnails/image-product-1-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="lightbox__thumb" aria-label="View image 2">
+          <img src="assets/thumbnails/image-product-2-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="lightbox__thumb" aria-label="View image 3">
+          <img src="assets/thumbnails/image-product-3-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="lightbox__thumb" aria-label="View image 4">
+          <img src="assets/thumbnails/image-product-4-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>
