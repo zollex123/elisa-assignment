@@ -2,6 +2,8 @@
 
 Responsive ja ligipääsetav pildigalerii koos lightbox-funktsiooniga.
 
+### [Demo](https://zollex123.github.io/elisa-assignment/)
+
 ## Lähenemine
 
 - **Vanilla TypeScript**, ilma raamistiketa
@@ -16,5 +18,5 @@ Responsive ja ligipääsetav pildigalerii koos lightbox-funktsiooniga.
 ## Ligipääsetavus
 
 - Täielik klaviatuurinavigatsioon (nooleklahvid, Escape, Tab) koos fookuse lukustamise ja taastamisega lightboxis
-- `aria-live` piirkonnad teavitavad ekraanilugejat pildi vahetusest (nt "Product image 2 of 4")
+- `aria-live` piirkonnad teavitavad ekraanilugejat pildi vahetusest (nt "Toote pilt 2/4")
 - `prefers-reduced-motion` toetatud, nähtavad fookusindikaatorid kõigil interaktiivsetel elementidel
