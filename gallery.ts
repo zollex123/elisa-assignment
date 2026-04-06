@@ -153,6 +153,30 @@ document.addEventListener("keydown", (e: KeyboardEvent) => {
   }
 });
 
+// Swipe support for mobile
+function addSwipe(el: HTMLElement, onPrev: () => void, onNext: () => void): void {
+  let startX = 0;
+  const THRESHOLD = 50;
+
+  el.addEventListener("touchstart", (e: TouchEvent) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  el.addEventListener("touchend", (e: TouchEvent) => {
+    const delta = e.changedTouches[0].clientX - startX;
+    if (Math.abs(delta) < THRESHOLD) return;
+    if (delta > 0) onPrev();
+    else onNext();
+  }, { passive: true });
+}
+
+const galleryMain = document.querySelector(".gallery__main") as HTMLElement;
+addSwipe(
+  galleryMain,
+  () => setGalleryImage((galleryIndex - 1 + totalImages) % totalImages),
+  () => setGalleryImage((galleryIndex + 1) % totalImages)
+);
+
 // Focus trap for lightbox
 function trapFocus(e: KeyboardEvent): void {
   const focusable = lightbox.querySelectorAll<HTMLElement>(

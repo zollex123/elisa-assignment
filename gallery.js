@@ -137,6 +137,25 @@ document.addEventListener("keydown", (e) => {
         }
     }
 });
+// Swipe support for mobile
+function addSwipe(el, onPrev, onNext) {
+    let startX = 0;
+    const THRESHOLD = 50;
+    el.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+    el.addEventListener("touchend", (e) => {
+        const delta = e.changedTouches[0].clientX - startX;
+        if (Math.abs(delta) < THRESHOLD)
+            return;
+        if (delta > 0)
+            onPrev();
+        else
+            onNext();
+    }, { passive: true });
+}
+const galleryMain = document.querySelector(".gallery__main");
+addSwipe(galleryMain, () => setGalleryImage((galleryIndex - 1 + totalImages) % totalImages), () => setGalleryImage((galleryIndex + 1) % totalImages));
 // Focus trap for lightbox
 function trapFocus(e) {
     const focusable = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
