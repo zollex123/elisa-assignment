@@ -25,7 +25,7 @@ let galleryIndex = 0;
 let lightboxIndex = 0;
 let triggerElement = null;
 function announce(region, index) {
-    region.textContent = `Product image ${index + 1} of ${totalImages}`;
+    region.textContent = `Toote pilt ${index + 1}/${totalImages}`;
 }
 function isDesktop() {
     return window.matchMedia("(min-width: 768px)").matches;
@@ -34,7 +34,7 @@ function isDesktop() {
 function setGalleryImage(index) {
     galleryIndex = index;
     galleryImage.src = images[index].product;
-    galleryImage.alt = `Product image ${index + 1} of ${totalImages}`;
+    galleryImage.alt = `Toote pilt ${index + 1}/${totalImages}`;
     galleryThumbs.forEach((thumb, i) => {
         thumb.classList.toggle("gallery__thumb--active", i === index);
         thumb.setAttribute("aria-current", i === index ? "true" : "false");
@@ -45,7 +45,7 @@ function setGalleryImage(index) {
 function setLightboxImage(index) {
     lightboxIndex = index;
     lightboxImage.src = images[index].product;
-    lightboxImage.alt = `Product image ${index + 1} of ${totalImages}`;
+    lightboxImage.alt = `Toote pilt ${index + 1}/${totalImages}`;
     lightboxThumbs.forEach((thumb, i) => {
         thumb.classList.toggle("lightbox__thumb--active", i === index);
         thumb.setAttribute("aria-current", i === index ? "true" : "false");

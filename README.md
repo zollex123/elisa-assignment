@@ -1,54 +1,20 @@
-# Product Image Gallery Component
+# Toote pildigalerii komponent
 
-A responsive, accessible image gallery with lightbox functionality.
+Responsive ja ligipääsetav pildigalerii koos lightbox-funktsiooniga.
 
-## Approach
+## Lähenemine
 
-### Architecture
-- **Vanilla TypeScript** — no frameworks, compiled to ES2020
-- **BEM methodology** for CSS — two blocks: `.gallery` (main component) and `.lightbox` (modal)
-- **Mobile-first** responsive design with a single breakpoint at 768px
+- **Vanilla TypeScript**, ilma raamistiketa
+- **BEM-metoodika** CSS-is kahe blokiga: `.gallery` ja `.lightbox`
+- **Mobile-first** responsiivne disain murdepunktiga 768px juures
 
-### Accessibility
-- Full keyboard navigation: Arrow keys for image cycling, Escape to close lightbox, Tab for interactive elements
-- Focus trapping inside lightbox modal when open
-- Focus restoration to trigger element on lightbox close
-- `aria-modal`, `aria-label`, `aria-current` for screen reader support
-- `prefers-reduced-motion` respected
-- All interactive elements reachable via keyboard with visible focus indicators
-- Thumbnail images marked `aria-hidden="true"` (decorative) — button labels provide context
+## Responsiivne käitumine
 
-### Responsive behavior
-- **Mobile (< 768px):** Full-bleed main image, left/right arrow navigation, no lightbox
-- **Desktop (≥ 768px):** Contained image with border-radius, thumbnail navigation, click-to-open lightbox with arrow + thumbnail navigation
+- **Mobiil:** Täislaiuses pilt, edasi/tagasi nooled, swipe-liigutused navigeerimiseks
+- **Desktop:** Ümarate nurkadega pilt, pisipiltidega navigeerimine, klõps avab lightbox-modaali
 
-### What I would improve with more time
-- Touch/swipe gestures for mobile image navigation
-- Image preloading for smoother transitions
-- Animated transitions between images
+## Ligipääsetavus
 
-## Running locally
-
-```bash
-# Compile TypeScript
-npx tsc
-
-# Serve (any static server works)
-npx serve .
-```
-
-## File structure
-
-```
-├── index.html       # Semantic HTML with ARIA attributes
-├── styles.css       # BEM-structured CSS, mobile-first
-├── gallery.ts       # TypeScript source
-├── gallery.js       # Compiled output
-├── tsconfig.json
-├── assets/
-│   ├── products/    # Full-size product images
-│   ├── thumbnails/  # Thumbnail images
-│   └── icons/       # SVG icons (arrows, close)
-└── README.md
-```
-# elisa-assignment
+- Täielik klaviatuurinavigatsioon (nooleklahvid, Escape, Tab) koos fookuse lukustamise ja taastamisega lightboxis
+- `aria-live` piirkonnad teavitavad ekraanilugejat pildi vahetusest (nt "Product image 2 of 4")
+- `prefers-reduced-motion` toetatud, nähtavad fookusindikaatorid kõigil interaktiivsetel elementidel
