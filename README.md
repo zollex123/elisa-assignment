@@ -20,3 +20,4 @@ Responsive ja ligipääsetav pildigalerii koos lightbox-funktsiooniga.
 - Täielik klaviatuurinavigatsioon (nooleklahvid, Escape, Tab) koos fookuse lukustamise ja taastamisega lightboxis
 - `aria-live` piirkonnad teavitavad ekraanilugejat pildi vahetusest (nt "Toote pilt 2/4")
 - `prefers-reduced-motion` toetatud, nähtavad fookusindikaatorid kõigil interaktiivsetel elementidel
+- [WCAG audit läbitud](https://accessibilitycheck.friendlycaptcha.com/audit?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3pvbGxleDEyMy5naXRodWIuaW8vZWxpc2EtYXNzaWdubWVudC8iLCJpYXQiOjE3NzU1MTcyODksImV4cCI6MTc3NTYwMzY4OX0.3oXIfaAxbNks3vJVFO8beT8wCfATjywP63rhi0EkzZo)
